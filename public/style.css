@@ -1,0 +1,715 @@
+/* general */
+*  {
+  cursor: none;
+}
+
+body {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  touch-action: manipulation;
+}
+
+a {
+  color: #00b7ff;
+  cursor: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent; 
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.margin-10 {
+  margin: 0 10px 0px 10px;
+}
+
+.margin-20 {
+  margin: 20px 20px 20px 20px;
+}
+
+.margin-bottom-10{
+  margin-bottom: 10px;
+}
+
+.margin-bottom-20{
+  margin-bottom: 20px;
+}
+
+.margin-top-40{
+  margin-top: 40px;
+}
+
+#error-page{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* general */
+
+/* menu */
+.menu{
+  padding-top: 200px;
+}
+
+.menu a{
+  font-size: 45px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: black;
+  margin: 20px;
+  text-decoration: none;
+  cursor: none;
+}
+
+.menu a:hover{
+  color:white;
+  top: -3px; 
+  left: -3px; 
+  text-shadow: 1px 1px black, 
+               2px 2px black, 
+               3px 3px black, 
+               4px 4px black, 
+               5px 5px black, 
+               6px 6px black;
+}
+
+.choose {
+  align-items: center;
+  /* padding-top: 100px; */
+}
+.choose a{
+  cursor: none;
+  font-size: 40px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: white;
+  text-shadow: 1px 0px black, 0px 1px black, -1px 0px black, 0px -1px black;
+  margin-top: 100px;
+  text-decoration: none;
+}
+
+.game-option:hover{
+  text-shadow: 1px 1px black, 
+               2px 2px black, 
+               3px 3px black, 
+               4px 4px black, 
+               5px 5px black, 
+               6px 6px black;
+}
+
+
+/* highlight selection for widths smaller than 625px */
+@media (max-width: 625px) {
+  .options-piece.selected {
+    border-color: #f0efef;
+    border-width: 15px;
+    border-style: solid;
+  }
+
+  .options-title{
+    margin: 20px 100px 20px 100px;
+  }
+
+  #leave-box{
+    top: 95px;
+  }
+
+  #players .chip{
+    height: 80px;
+    width: 80px;
+  }
+
+  #connect-table td {
+    width: 40px;
+    height: 40px;
+    }
+}
+
+/* fancy cursor for widths larger than 625px */
+@media (min-width: 625px) {
+  #connect-table td {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .options-title{
+    margin: 60px 100px 30px 100px;
+  }
+
+  #r-cursor {
+    background-image: url(red1.jpg);
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    /* top: var(--mouse-y, 0);
+    left: var(--mouse-x, 0);    */
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    position: absolute;
+    z-index: 3;
+  }
+
+  #y-cursor {
+    background-image: url(yellow.webp);
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    /* top: var(--mouse-y, 0);
+    left: var(--mouse-x, 0);    */
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    position: absolute;
+    z-index: 3;
+  }
+}
+/* menu */
+
+/* connect */
+.start-buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.start-btn{
+  background-color: #42b742;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.start-vs-ai{
+  margin-top: 50px;
+}
+
+.start-vs-ai-btn{
+  background-color: #42b742;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.start-vs-ai-btn:hover{
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+/* #join-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+} */
+
+.start-option {
+  line-height: 45px;
+  margin: 20px;
+}
+
+.start-something{
+  max-width: 575px;
+}
+
+.info{
+  font-weight: bolder;
+  border: #00b7ff;
+  border-radius: 5px;
+  border-style: solid;
+  padding: 5px 7px 5px 7px;
+  margin-left: 4px;
+}
+
+.more-than-necessary{
+  margin: 0px 20px 0px 20px;
+}
+
+.confirm-phone{
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#send-sms a {
+  background-color: #00b7ff;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#send-sms input {
+  width: 75px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#send-sms span {
+  color: black;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.game-code {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.join input {
+  margin-top: 20px;
+  width: 100px;
+  height: 25px;
+}
+
+#start-message{
+  font-size: 25px;
+  padding: 0px 20px 0px 20px;
+}
+
+.vs-toggle {
+  color: rgb(37, 37, 173);
+  font-weight: bold;
+}
+
+#leave-box{
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  display: flex;
+  }
+
+.dialogue{
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  padding: 30px;
+  width: 150px;
+  z-index: 2;
+  }
+
+.options-title {
+  font-size: 40px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: white;
+  text-shadow: 1px 1px black, 
+               2px 2px black, 
+               3px 3px black, 
+               4px 4px black, 
+               5px 5px black, 
+               6px 6px black;
+  text-decoration: none;
+}  
+
+.in-person-title {
+  font-size: 40px;
+  font-family: 'Press Start 2P', sans-serif;
+  color: white;
+  text-shadow: 1px 1px black, 
+               2px 2px black, 
+               3px 3px black, 
+               4px 4px black, 
+               5px 5px black, 
+               6px 6px black;
+  text-decoration: none;
+  margin: 100px 100px 30px 100px;
+}  
+
+#players{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 400px;
+}
+
+#players .r {
+  border-radius: 50%;
+  background-image: url(red1.jpg);
+}
+
+#players .y{
+  border-radius: 50%;
+  background-image: url(yellow.webp);
+}
+
+#players .chip{
+  background-size: cover;
+  height: 100px;
+  width:100px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  flex-direction: column;
+}
+
+.options-piece {
+  background-size: cover;
+  height: 100px;
+  width:100px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  flex-direction: column;
+}
+
+.options-piece:hover{
+  border-radius: 50%;
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+.options-piece.selected{
+  border-radius: 50%;
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+.level-option {
+  font-size: 40px;
+  font-family: 'Press Start 2P', sans-serif;
+  margin: 10px 25px 10px 25px;
+  text-decoration: none;
+}
+
+.level-option a {
+  color: black;
+}
+
+.level-option.selected a{
+  color:white;
+  top: -3px; 
+  left: -3px; 
+  text-shadow: 1px 1px black, 
+               2px 2px black, 
+               3px 3px black, 
+               4px 4px black, 
+               5px 5px black, 
+               6px 6px black;
+}
+
+#game-msg{
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+#connect-table {
+  border-collapse: collapse;
+  background-color: #0a6ee5;
+}
+
+/* this is just so the shimmer is white on a win */
+#connect-table tr{
+  background-color: white;
+}
+
+#connect-table td {
+  border: 5px solid rgb(37, 37, 173);
+  border-radius: 50%;
+  padding: 0px;
+  /* width: 60px;
+  height: 60px; */
+  background-color: white
+}
+
+.wins {
+  font-size: 15px;
+}
+
+.win {
+  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {-webkit-mask-position:left}
+}
+
+td.y {
+  background-image: url(yellow.webp);
+  background-size: contain;
+}
+
+td.r{
+  background-image: url(red1.jpg);
+  background-size: contain;
+}
+
+.clear-btn {
+  padding: 0.85em 0.75em;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-size: 0.9em;
+  text-align: center;
+  background-color: rgb(37, 37, 173);
+  color: #fefefe;
+  width: 150px;
+  margin-top: 30px;
+  cursor: none;
+}
+
+.clear-btn:focus {
+  outline: none;
+}
+/* connect */
+
+
+/* OLD auth-form */
+.auth-title {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 40px;
+}
+
+.auth-error {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: red;
+  max-width: 230px;
+  height: 50px
+}
+
+.auth-msg {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: green;
+  max-width: 230px;
+  height: 50px
+}
+
+#auth-form {
+  max-width: 400px;
+  margin-top: 20px;
+  /* margin-top: 50px; */
+  border: 0.5rem outset pink;
+  border-radius: 20px;
+}
+
+#auth-form input {
+  width: 250px;
+  height: 25px;
+}
+
+#auth-form .field {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#auth-form .edit-field {
+  padding: 0 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#auth-form .label {
+  padding: 10px 0 0 10px;
+  font-size: 12px;
+  width: 250px;
+}
+
+#auth-form .auth-buttons {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+#auth-form .auth-option {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#auth-form .submit {
+  text-emphasis: bold;
+  border-radius: 8px;
+  background-color: pink;
+  padding: 8px;
+  cursor: pointer;
+  color: black;
+  border: 2px outset lightgray;
+}
+/* auth-form */
+
+/* OLD nav */
+#nav-container{
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#nav-container a{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+/* nav */
+
+
+/* OLD gol */
+#gol-table {
+  border-collapse: collapse;
+}
+
+#gol-table td {
+  border: 1px solid #ddd;
+  width: 18px;
+  height: 18px;
+}
+
+td.alive {
+  background-color: #8cc8dd;
+}
+
+.button {
+  padding: 0.85em 1em;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #2ba6cb;
+  color: #fefefe;
+}
+/* gol */
+
+/* gol and connect */
+#control-panel {
+  margin: 10px 0 50px 0;
+}
+/* gol AND connect */
+
+/* OLD Coffee clicker */
+.coffee-body h1 {
+  padding-top: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.column-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  height: 30em;
+  min-width: 90%;
+  margin: 10px;
+  margin-top: 0px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 40px);
+}
+
+.container.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-header {
+  font-size: 25px;
+  position: relative;
+  background-color: white;
+  top: 8px;
+}
+
+#big_coffee {
+  user-select: none;
+  font-size: 20em;
+  cursor: pointer;
+}
+
+.counter-container {
+  font-size: 30px;
+  margin: 10px;
+}
+
+#producer_container {
+  padding: 10px;
+  overflow: auto;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.producer {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.producer-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.producer button {
+  text-align: center;
+  font-size: 15px;
+  width: 50px;
+}
+/* Coffee */
+
+
