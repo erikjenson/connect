@@ -12,7 +12,7 @@ function Game (props) {
 
   const {cursor, setCursor} = props
 
-  const [player, setPlayer] = useState('r')
+  const [player, setPlayer] = useState('')
   //vsAI vsLocal vsRemote
   const [gameType, setGameType] = useState('')
   //[1,2,3,4]
@@ -21,7 +21,7 @@ function Game (props) {
   const [opponentWins, setOpponentWins] = useState(0)
   const [gameMsg, setGameMsg] = useState('')
   const [board, setBoard] = useState([])
-  const [turn, setTurn] = useState('r')
+  const [turn, setTurn] = useState('')
   const [gameOver, setGameOver] = useState(true)
   const [start, setStart] = useState(false)
   const opponent = player === 'r' ? 'y' : 'r'
@@ -120,6 +120,9 @@ function Game (props) {
 
   //this sets a new game at the start and when clearing the board
   function startNewGame(){
+    if(!player){
+      setPlayer(cursor)
+    }
     const rowCount = 6
     const columnCount = 7
     let newBoard = []
@@ -152,7 +155,7 @@ function Game (props) {
           <div>
             {!start && (
               <div className="flex-col">
-                  <GameOptions setStart={setStart} startNewGame={startNewGame} difficulty={difficulty} setDifficulty={setDifficulty} player={player} setPlayer={setPlayer} setCursor={setCursor} gameType={gameType}/>
+                  <GameOptions setStart={setStart} startNewGame={startNewGame} difficulty={difficulty} setDifficulty={setDifficulty} cursor={cursor} setPlayer={setPlayer} setTurn={setTurn} setCursor={setCursor} gameType={gameType}/>
               </div>
             )}
             {start && (

@@ -7,7 +7,7 @@ const GameType = ({setGameType}) => {
 
   return(
     <div className='flex-col choose'>
-      <a className="game-option" onClick={()=>{setGameType('vsAI')}}>Play against Erik's AI</a>
+      <a className="game-option" onClick={()=>{setGameType('vsAI')}}>Play against Erik's code</a>
       <a className="game-option" onClick={()=>{setGameType('vsLocal')}}>Play in person with someone on this device</a>
     </div>
   )

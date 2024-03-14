@@ -7,7 +7,7 @@ const Players = props => {
   const opponentChip = player === 'r'? 'y chip': 'r chip'
   const playerChip = `${player} chip`
   let userName = 'You'
-  let opponentName = 'AI'
+  let opponentName = 'Erik'
 
   if (gameType === "vsLocal"){
     userName = ''

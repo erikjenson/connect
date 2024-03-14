@@ -123,7 +123,7 @@ a {
   }
 
   .options-title{
-    margin: 20px 100px 20px 100px;
+    margin: 20px 0px 20px 0px;
   }
 
   #leave-box{
@@ -149,7 +149,7 @@ a {
   }
   
   .options-title{
-    margin: 60px 100px 30px 100px;
+    margin: 60px 0px 30px 0px;
   }
 
   #r-cursor {
@@ -330,7 +330,7 @@ a {
   text-decoration: none;
 }  
 
-.in-person-title {
+.vs-local-title {
   font-size: 40px;
   font-family: 'Press Start 2P', sans-serif;
   color: white;
@@ -341,7 +341,7 @@ a {
                5px 5px black, 
                6px 6px black;
   text-decoration: none;
-  margin: 100px 100px 30px 100px;
+  margin: 100px 0px 30px 0px;
 }  
 
 #players{

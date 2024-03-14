@@ -10,8 +10,7 @@ function PaintBoard (props) {
   for (let h = 0; h < boardData.length; h++) {
     let tr = []
     for (let w = 0; w < boardData[0].length; w++) {
-      let className = ''
-      // let className = boardData[h][w]
+      let className = boardData[h][w]
       if(boardData[h][w] === 1){
         className = player
       }else if(boardData[h][w] === 2){
