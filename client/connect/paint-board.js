@@ -30,9 +30,11 @@ function PaintBoard (props) {
   }
 
   return (
-    <table id="connect-table">
-      <tbody onClick={(e)=>{canDrop ? dropChip(+e.target.dataset.c) : ''}}>{table}</tbody>
-    </table>
+    <div>
+      <table id="connect-table">
+        <tbody onClick={(e)=>{canDrop ? dropChip(+e.target.dataset.c) : ''}}>{table}</tbody>
+      </table>
+    </div>
   );
 };
 
