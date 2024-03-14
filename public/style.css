@@ -442,7 +442,7 @@ a {
   background-color: #0a6ee5;
 }
 
-/* this is just so the shimmer is white on a win */
+/* this makes the shimmer win effect white instead of blue */
 #connect-table tr{
   background-color: white;
 }
@@ -478,6 +478,11 @@ td.y {
 td.r{
   background-image: url(red1.jpg);
   background-size: contain;
+}
+
+.github-link {
+  text-decoration: none;
+  color: rgb(37, 37, 173);;
 }
 
 .clear-btn {

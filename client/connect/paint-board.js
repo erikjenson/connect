@@ -2,24 +2,25 @@ import React from 'react';
 
 function PaintBoard (props) {
 
-  const {boardData, dropChip, player, turn, gameType} = props;
+  const {boardData, dropChip, player, turn, gameType} = props
   let opponent = player === 'r' ? 'y' : 'r'
   
   //draw a new board from board array
-  let table = [];
+  let table = []
   for (let h = 0; h < boardData.length; h++) {
-    let tr = [];
+    let tr = []
     for (let w = 0; w < boardData[0].length; w++) {
-      let className = boardData[h][w];
+      let className = ''
+      // let className = boardData[h][w]
       if(boardData[h][w] === 1){
-        className = player;
+        className = player
       }else if(boardData[h][w] === 2){
-        className = opponent;
+        className = opponent
       }
-      const td = <td key={h+w} data-r={h} data-c={w} className={className}/>;
-      tr.push(td);
+      const td = <td key={h+w} data-r={h} data-c={w} className={className}/>
+      tr.push(td)
     }
-    table.push(<tr key={h}>{tr}</tr>);
+    table.push(<tr key={h}>{tr}</tr>)
   }
 
   /* allow both players to drop a chip when 'vsLocal'. otherwise only the user can move on 

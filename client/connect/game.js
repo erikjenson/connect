@@ -161,6 +161,7 @@ function Game (props) {
                   <GameMsg player={turn} message={gameMsg} />
                   <PaintBoard boardData={board} dropChip={dropChip} player={player} turn={turn} gameType={gameType}/>
                   <ClearBoard startNewGame={startNewGame} />
+                  {gameType == 'vsAI' && (<a className='github-link' href='https://github.com/erikjenson/connect/blob/main/client/connect/minimax.js'>view the code</a>)}
               </div>
             )}
           </div>
